@@ -110,6 +110,10 @@ RDEPENDS_${PN} = " \
     ${@bb.utils.contains('DISTRO_FEATURES', 'wayland', 'libgbm wayland-kms', '', d)} \
 "
 
+DEPENDS_${PN} = " \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'wayland', 'libgbm wayland-kms', '', d)} \
+"
+
 INSANE_SKIP_${PN} = "ldflags build-deps file-rdeps"
 INSANE_SKIP_${PN}-dev = "ldflags build-deps file-rdeps"
 INSANE_SKIP_${PN} += "arch"
